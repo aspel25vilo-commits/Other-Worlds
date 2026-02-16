@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEditor;
 
 public class player : MonoBehaviour
 {
@@ -7,14 +8,20 @@ public class player : MonoBehaviour
     public float jumpspeed;
     public bool canjump = true;
     public float jumpdelay;
+    Rigidbody2D rigiy;
     void Start()
     {
-        
+        rigiy = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+
+        }
+
         if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(Vector3.left * playerspeed);
@@ -36,7 +43,14 @@ public class player : MonoBehaviour
             
         
         }
-        
+        if (canjump == true)
+        {
+            rigiy.gravityScale = 0;
+        }
+        if (canjump == false)
+        {
+            rigiy.gravityScale = 1;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -55,4 +69,6 @@ public class player : MonoBehaviour
         yield return new WaitForSeconds(jumpdelay);
         canjump = false;
     }
+
+    
 }
