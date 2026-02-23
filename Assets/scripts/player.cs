@@ -9,18 +9,22 @@ public class player : MonoBehaviour
     public bool canjump = true;
     public float jumpdelay;
     Rigidbody2D rigiy;
+    public Animator objAnimator;
+    public SpriteRenderer fhillip;
+    private SpriteRenderer fhill;
     void Start()
     {
+        objAnimator = GetComponent<Animator>();
+        fhillip = GetComponent<SpriteRenderer>();
         rigiy = GetComponent<Rigidbody2D>();
+        fhill = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-
-        }
+  
+      
 
         if (Input.GetKey(KeyCode.A))
         {
@@ -51,13 +55,41 @@ public class player : MonoBehaviour
         {
             rigiy.gravityScale = 1;
         }
+        if (Input.GetKey(KeyCode.D))
+        {
+            
+            transform.localScale = new Vector3(3, transform.localScale.y, transform.localScale.z);
+            objAnimator.SetBool("runleft", true);
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            
+            transform.localScale = new Vector3(-3, transform.localScale.y, transform.localScale.z);
+            objAnimator.SetBool("runleft", true);
+        }
+        else
+        {
+            objAnimator.SetBool("runleft", false);
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            
+            objAnimator.SetBool("jump", true);
+        }
+        else
+        {
+            //objAnimator.SetBool("jump", false);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "floor")
         {
+            objAnimator.SetBool("jump", false);
             canjump = true;
+            
+
         }
 
 
