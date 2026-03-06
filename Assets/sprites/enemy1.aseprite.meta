@@ -125,14 +125,14 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Frame_0
     originalName: 
-    pivot: {x: 0.5671642, y: -2.125}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
       x: 4
-      y: 67
+      y: 68
       width: 67
       height: 24
     spriteID: e5274c9ac9b8bcb478085d1f475642eb
@@ -146,14 +146,14 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 67}
   - name: Frame_1
     originalName: 
-    pivot: {x: 0.56060606, y: -2.125}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
-      x: 4
-      y: 131
+      x: 5
+      y: 130
       width: 66
       height: 24
     spriteID: 102500ec8c0bd174794f2a17b7557dcf
@@ -167,8 +167,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 131}
   - name: Frame_2
     originalName: 
-    pivot: {x: 0.5671642, y: -2.125}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
@@ -188,8 +188,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 99}
   - name: Frame_3
     originalName: 
-    pivot: {x: 0.67857146, y: -1.9599999}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
@@ -209,8 +209,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 163}
   - name: Frame_4
     originalName: 
-    pivot: {x: 0.6530612, y: -2.5833335}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
@@ -230,8 +230,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: Frame_5
     originalName: 
-    pivot: {x: 0.6494845, y: -2.7391305}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:

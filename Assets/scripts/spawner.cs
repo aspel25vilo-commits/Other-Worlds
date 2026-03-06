@@ -1,7 +1,14 @@
 using UnityEngine;
+using System.Collections;
 
 public class spawner : MonoBehaviour
 {
+    public GameObject enemyGameObject;
+    public float spawnCooldown;
+    public bool canspawn = true;
+
+    public float minValue;
+    public float maxValue;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -11,6 +18,25 @@ public class spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (enemyGameObject != null && canspawn == true)
+        {
+            StartCoroutine(EnemySpawner());
+            canspawn = false;
+        }
+    }
+
+    private IEnumerator EnemySpawner()
+    {
+        yield return new WaitForSeconds(spawnCooldown);
+        if (minValue == 0 && maxValue == 0)
+        {
+            Instantiate(enemyGameObject, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Vector2 randomLocation = new Vector2(Random.Range(minValue, maxValue), transform.position.y);
+            Instantiate(enemyGameObject, randomLocation, Quaternion.identity);
+        }
+        canspawn = true;
     }
 }

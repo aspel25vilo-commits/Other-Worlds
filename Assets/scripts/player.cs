@@ -12,12 +12,25 @@ public class player : MonoBehaviour
     public Animator objAnimator;
     public SpriteRenderer fhillip;
     private SpriteRenderer fhill;
+    public float health = 3;
+    private GameObject life3;
+    private GameObject life2;
+    private GameObject life1;
+    public GameObject txtobjc;
+
     void Start()
     {
         objAnimator = GetComponent<Animator>();
         fhillip = GetComponent<SpriteRenderer>();
         rigiy = GetComponent<Rigidbody2D>();
         fhill = GetComponent<SpriteRenderer>();
+        txtobjc = GameObject.Find("lifecounter");
+    }
+    private void Awake()
+    {
+        life3 = GameObject.Find("life3");
+        life2 = GameObject.Find("life2");
+        life1 = GameObject.Find("life1");
     }
 
     // Update is called once per frame
@@ -25,7 +38,10 @@ public class player : MonoBehaviour
     {
   
       
-
+        if (health < 1)
+        {
+            Destroy(this.gameObject);
+        }
         if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(Vector3.left * playerspeed);
@@ -92,6 +108,18 @@ public class player : MonoBehaviour
 
         }
 
+        if (other.gameObject.tag == "enemy")
+        {
+            takedamage();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "enemy")
+        {
+            takedamage();
+        }
 
     }
 
@@ -101,6 +129,22 @@ public class player : MonoBehaviour
         yield return new WaitForSeconds(jumpdelay);
         canjump = false;
     }
+    private void takedamage()
+    {
+        health--;
+        if (health < 3)
+        {
+            life3.SetActive(false);
+        }
+        if (health < 2)
+        {
+            life2.SetActive(false);
+        }
+        if (health < 1)
+        {
+            life1.SetActive(false);
+        }
+    }
 
-    
+
 }

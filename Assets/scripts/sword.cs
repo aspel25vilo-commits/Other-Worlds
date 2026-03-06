@@ -28,20 +28,21 @@ public class sword : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
 
             objAnimator.SetBool("attack", false);
             objAnimator.SetBool("upattack", true);
             StartCoroutine(Jumpcoldown());
         }
-        if (Input.GetKey(KeyCode.Space) && Input.GetKeyDown(KeyCode.S))
-        {
+        //if (Input.GetKey(KeyCode.Space) && Input.GetKeyDown(KeyCode.S))
+        //{
 
-            objAnimator.SetBool("attack", false);
-            objAnimator.SetBool("upattack", true);
-            StartCoroutine(Jumpcoldown());
-        }
+        //    objAnimator.SetBool("attack", false);
+        //    objAnimator.SetBool("upattack", true);
+        //    StartCoroutine(Jumpcoldown());
+        //}
+
 
     }
 
