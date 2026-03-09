@@ -8,6 +8,9 @@ TagManager:
   - sword
   - player
   - enemy
+  - life3
+  - life2
+  - life1
   layers:
   - Default
   - TransparentFX

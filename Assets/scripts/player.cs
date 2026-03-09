@@ -13,10 +13,8 @@ public class player : MonoBehaviour
     public SpriteRenderer fhillip;
     private SpriteRenderer fhill;
     public float health = 3;
-    private GameObject life3;
-    private GameObject life2;
-    private GameObject life1;
-    public GameObject txtobjc;
+
+    
 
     void Start()
     {
@@ -24,14 +22,9 @@ public class player : MonoBehaviour
         fhillip = GetComponent<SpriteRenderer>();
         rigiy = GetComponent<Rigidbody2D>();
         fhill = GetComponent<SpriteRenderer>();
-        txtobjc = GameObject.Find("lifecounter");
+        
     }
-    private void Awake()
-    {
-        life3 = GameObject.Find("life3");
-        life2 = GameObject.Find("life2");
-        life1 = GameObject.Find("life1");
-    }
+   
 
     // Update is called once per frame
     void Update()
@@ -108,17 +101,22 @@ public class player : MonoBehaviour
 
         }
 
-        if (other.gameObject.tag == "enemy")
+        /*if (other.gameObject.tag == "enemy")
         {
-            takedamage();
-        }
+            Takedamage();
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "enemy")
         {
-            takedamage();
+            Debug.Log("Denna kolliderar jag med: " + other.gameObject.name);
+        }
+
+            if (other.tag == "enemy")
+        {
+            Takedamage();
         }
 
     }
@@ -129,20 +127,20 @@ public class player : MonoBehaviour
         yield return new WaitForSeconds(jumpdelay);
         canjump = false;
     }
-    private void takedamage()
+    private void Takedamage()
     {
         health--;
         if (health < 3)
         {
-            life3.SetActive(false);
+            Destroy(GameObject.FindWithTag("life3"));
         }
         if (health < 2)
         {
-            life2.SetActive(false);
+            Destroy(GameObject.FindWithTag("life2"));
         }
         if (health < 1)
         {
-            life1.SetActive(false);
+            Destroy(GameObject.FindWithTag("life1"));
         }
     }
 
