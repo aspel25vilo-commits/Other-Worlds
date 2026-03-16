@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class skelk : MonoBehaviour
 {
     Rigidbody2D rb;
     public Animator objAnimator;
@@ -44,13 +44,13 @@ public class NewMonoBehaviourScript : MonoBehaviour
         transform.Translate(Vector3.right * move * Time.deltaTime);
     }
 
-    private void Entakedamage()
+    public void Entakedamage()
     {
         enhealth--;
 
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "sword")
         {

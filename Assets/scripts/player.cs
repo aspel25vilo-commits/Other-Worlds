@@ -101,10 +101,6 @@ public class player : MonoBehaviour
 
         }
 
-        /*if (other.gameObject.tag == "enemy")
-        {
-            Takedamage();
-        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -114,7 +110,7 @@ public class player : MonoBehaviour
             Debug.Log("Denna kolliderar jag med: " + other.gameObject.name);
         }
 
-            if (other.tag == "enemy")
+        if (other.tag == "enemy")
         {
             Takedamage();
         }
