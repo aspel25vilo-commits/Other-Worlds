@@ -53,4 +53,9 @@ public class enemy2 : MonoBehaviour
         }
 
     }
+    public void Entakedamage()
+    {
+        en2health--;
+
+    }
 }

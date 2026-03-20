@@ -133,10 +133,11 @@ MonoBehaviour:
   attackdelay: 4
   animationdelay: 1
   Speed: 300
-  play: {fileID: 0}
+  player: {fileID: 0}
   objAnimator: {fileID: 0}
   fhillip: {fileID: 0}
   enhealth: 1
+  txtobj: {fileID: 0}
 --- !u!61 &3862631205170915268
 BoxCollider2D:
   m_ObjectHideFlags: 0
