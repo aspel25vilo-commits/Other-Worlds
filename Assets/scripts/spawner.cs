@@ -11,6 +11,10 @@ public class spawner : MonoBehaviour
     public GameObject SpritGameOject2;
     public float spawnCooldown2;
     public bool canspawn2 = true;
+    public GameObject enemyGameObject3;
+    public GameObject SpritGameOject3;
+    public float spawnCooldown3;
+    public bool canspawn3 = true;
 
     public float minValue;
     public float maxValue;
@@ -32,6 +36,11 @@ public class spawner : MonoBehaviour
         {
             StartCoroutine(EnemySpawner2());
             canspawn2 = false;
+        }
+        if (enemyGameObject3 != null && canspawn3 == true)
+        {
+            StartCoroutine(EnemySpawner3());
+            canspawn3 = false;
         }
 
     }
@@ -67,5 +76,21 @@ public class spawner : MonoBehaviour
             Instantiate(SpritGameOject2, randomLocation, Quaternion.identity);
         }
         canspawn2 = true;
+    }
+    private IEnumerator EnemySpawner3()
+    {
+        yield return new WaitForSeconds(spawnCooldown3);
+        if (minValue == 0 && maxValue == 0)
+        {
+            Instantiate(enemyGameObject3, transform.position, Quaternion.identity);
+            Instantiate(SpritGameOject3, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Vector2 randomLocation = new Vector2(Random.Range(minValue, maxValue), transform.position.y);
+            Instantiate(enemyGameObject3, randomLocation, Quaternion.identity);
+            Instantiate(SpritGameOject3, randomLocation, Quaternion.identity);
+        }
+        canspawn3 = true;
     }
 }

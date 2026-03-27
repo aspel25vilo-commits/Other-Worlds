@@ -43,7 +43,7 @@ public class enemy2 : MonoBehaviour
         while (true)
         {
 
-            rb.AddForce(move.normalized * Vector3.up * Speed);
+            rb.AddForce(move * Vector3.up * Speed);
             objAnimator.SetBool("attack", true);
             yield return new WaitForSeconds(animationdelay);
             objAnimator.SetBool("attack", false);

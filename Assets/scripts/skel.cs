@@ -9,22 +9,22 @@ public class skelk : MonoBehaviour
     public GameObject txtobj;
     Vector2 move = new Vector2(1f, 1f);
     public GameObject player;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    damgepro immunityHandler;
+
     void Start()
     {
         objAnimator = GetComponent<Animator>();
         fhillip = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
-        
+        immunityHandler = GetComponent<damgepro>();
         txtobj = GameObject.Find("pointcounter");
     }
+
     private void Awake()
     {
-
         player = GameObject.Find("player").gameObject;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (move.x < 0)
@@ -44,18 +44,15 @@ public class skelk : MonoBehaviour
         transform.Translate(Vector3.right * move * Time.deltaTime);
     }
 
+    /// <summary>
+    /// Apply one point of damage if not currently immune.
+    /// </summary>
     public void Entakedamage()
     {
-        enhealth--;
-
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "sword")
+        if (immunityHandler == null || !immunityHandler.IsImmune)
         {
-            Entakedamage();
-
+            enhealth--;
+            immunityHandler?.OnDamageReceived();
         }
     }
 }

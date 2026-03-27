@@ -1,3 +1,4 @@
+using Mono.Cecil;
 using UnityEngine;
 
 public class hitbox2 : MonoBehaviour
@@ -8,7 +9,7 @@ public class hitbox2 : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        skel = GetComponent<enemy2>();
+        skel = GetComponentInParent<enemy2>();
 
     }
 
@@ -18,11 +19,13 @@ public class hitbox2 : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log(other.gameObject.tag);
         if (other.gameObject.tag == "sword")
         {
             skel.Entakedamage();
+
 
 
         }

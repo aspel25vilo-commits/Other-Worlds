@@ -13,6 +13,7 @@ public class player : MonoBehaviour
     public SpriteRenderer fhillip;
     private SpriteRenderer fhill;
     public float health = 3;
+    damgepro immunityHandler;
 
     
 
@@ -22,7 +23,7 @@ public class player : MonoBehaviour
         fhillip = GetComponent<SpriteRenderer>();
         rigiy = GetComponent<Rigidbody2D>();
         fhill = GetComponent<SpriteRenderer>();
-        
+        immunityHandler = GetComponent<damgepro>();
     }
    
 
@@ -112,7 +113,11 @@ public class player : MonoBehaviour
 
         if (other.tag == "enemy")
         {
-            Takedamage();
+            if (immunityHandler == null || !immunityHandler.IsImmune)
+            {
+                Takedamage();
+                immunityHandler?.OnDamageReceived();
+            }
         }
 
     }

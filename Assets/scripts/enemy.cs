@@ -75,7 +75,7 @@ public class enemy : MonoBehaviour
         if (other.tag == "sword")
         {
             Entakedamage();
-            
+
         }
     }
 
