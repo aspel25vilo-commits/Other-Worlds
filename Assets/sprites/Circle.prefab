@@ -114,7 +114,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -177,12 +177,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115877b14c480b7488bfb54540e1ce75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1000
+  Speed: 500
   player: {fileID: 0}
   en2health: 3
   txtobj: {fileID: 0}
   objAnimator: {fileID: 0}
-  attackdelay: 10
+  attackdelay: 2
   animationdelay: 0
 --- !u!95 &1065943201252448993
 Animator:
@@ -194,7 +194,7 @@ Animator:
   m_GameObject: {fileID: 7454089969051367500}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: -8665095713724571146, guid: b950bd3102a2c494c93eeae6c5d1b7d1, type: 3}
+  m_Controller: {fileID: 9100000, guid: 9d3b1b8b98eb771458c654549864fcb9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

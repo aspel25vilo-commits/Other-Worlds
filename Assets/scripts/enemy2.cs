@@ -25,12 +25,19 @@ public class enemy2 : MonoBehaviour
     {
 
         player = GameObject.Find("player").gameObject;
+        move = player.transform.position - transform.position;
+        move = move.normalized;
     }
 
     // Update is called once per frame
     void Update()
     {
-        move = player.transform.position - transform.position;
+        if (player != null)
+        {
+            move = player.transform.position - transform.position;
+            move = move.normalized;
+        }
+        
         if (en2health < 1)
         {
             txtobj.GetComponent<points>().addpoints(1);
@@ -42,8 +49,9 @@ public class enemy2 : MonoBehaviour
     {
         while (true)
         {
-
-            rb.AddForce(move * Vector3.up * Speed);
+            //Kolla om han är på marken.
+            //
+            rb.AddForce((move + Vector2.up).normalized * Speed);
             objAnimator.SetBool("attack", true);
             yield return new WaitForSeconds(animationdelay);
             objAnimator.SetBool("attack", false);

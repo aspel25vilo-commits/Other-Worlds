@@ -28,6 +28,8 @@ public class enemy : MonoBehaviour
     {
 
         player = GameObject.Find("player").gameObject;
+        move = player.transform.position - transform.position;
+        move = move.normalized;
     }
 
     void Update()
@@ -41,6 +43,7 @@ public class enemy : MonoBehaviour
             fhillip.flipX = false;
         }
         move = player.transform.position - transform.position;
+        move = move.normalized;
         if (enhealth < 1)
         {
             txtobj.GetComponent<points>().addpoints(1);

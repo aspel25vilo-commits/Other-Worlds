@@ -35,6 +35,7 @@ public class skelk : MonoBehaviour
         {
             fhillip.flipX = false;
         }
+
         move = player.transform.position - transform.position;
         if (enhealth < 1)
         {
