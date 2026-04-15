@@ -133,8 +133,6 @@ GameObject:
   - component: {fileID: -8639204313077048487}
   - component: {fileID: 2216850400066783385}
   - component: {fileID: 1115751859779461848}
-  - component: {fileID: 587207825659472767}
-  - component: {fileID: 3035304868092079375}
   m_Layer: 6
   m_Name: skeleton
   m_TagString: enemy
@@ -235,7 +233,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 192
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -300,7 +298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objAnimator: {fileID: 0}
   fhillip: {fileID: 0}
-  enhealth: 2
+  enhealth: 1
   txtobj: {fileID: 0}
   player: {fileID: 0}
 --- !u!95 &1115751859779461848
@@ -325,28 +323,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &587207825659472767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7772042637747995937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d820481787b061a4da9fee8a8af49e82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &3035304868092079375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7772042637747995937}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22b85673fa461644eb6b8c08d8819b8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flickerRate: 15

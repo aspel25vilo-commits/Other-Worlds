@@ -38,21 +38,23 @@ public class player : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector3.left * playerspeed);
+            transform.Translate(Vector3.left.normalized * playerspeed);
+            //rigiy.AddForce(playerspeed * Vector2.left.normalized);
 
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector3.right * playerspeed);
-
+            transform.Translate(Vector3.right.normalized * playerspeed);
+            //rigiy.AddForce(playerspeed * Vector2.right.normalized);
         }
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             if (canjump == true)
             {
 
                 StartCoroutine(Jumpcoldown());
-                transform.Translate(Vector3.up * jumpspeed);
+                //transform.Translate(Vector3.up * jumpspeed);
+                rigiy.AddForce(jumpspeed * Vector2.up.normalized);
             }
             
         
