@@ -177,12 +177,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115877b14c480b7488bfb54540e1ce75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 700
+  Speed: 600
   player: {fileID: 0}
   en2health: 2
   txtobj: {fileID: 0}
   objAnimator: {fileID: 0}
-  attackdelay: 8
+  attackdelay: 3
   animationdelay: 1
 --- !u!95 &1065943201252448993
 Animator:

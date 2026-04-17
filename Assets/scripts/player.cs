@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 using UnityEditor;
 
 public class player : MonoBehaviour
@@ -7,7 +6,6 @@ public class player : MonoBehaviour
     public float playerspeed;
     public float jumpspeed;
     public bool canjump = true;
-    public float jumpdelay;
     Rigidbody2D rigiy;
     public Animator objAnimator;
     public SpriteRenderer fhillip;
@@ -51,21 +49,10 @@ public class player : MonoBehaviour
         {
             if (canjump == true)
             {
-
-                StartCoroutine(Jumpcoldown());
-                //transform.Translate(Vector3.up * jumpspeed);
-                rigiy.AddForce(jumpspeed * Vector2.up.normalized);
+                canjump = false;
+                rigiy.linearVelocity = new Vector2(rigiy.linearVelocity.x, 0f);
+                rigiy.AddForce(Vector2.up * jumpspeed, ForceMode2D.Impulse);
             }
-            
-        
-        }
-        if (canjump == true)
-        {
-            rigiy.gravityScale = 0;
-        }
-        if (canjump == false)
-        {
-            rigiy.gravityScale = 1;
         }
         if (Input.GetKey(KeyCode.D))
         {
@@ -125,11 +112,6 @@ public class player : MonoBehaviour
     }
 
 
-    private IEnumerator Jumpcoldown()
-    {
-        yield return new WaitForSeconds(jumpdelay);
-        canjump = false;
-    }
     private void Takedamage()
     {
         health--;
