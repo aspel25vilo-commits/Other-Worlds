@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5763487991878193715}
   m_Layer: 0
   m_Name: boss
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -5512510097426199315, guid: 581acc2cd37019d4ebe1632c7829a0cf, type: 3}
+  m_Sprite: {fileID: 4873899757810063428, guid: 5199c95fc3401dc4b956a0c5c6c794ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,7 +101,7 @@ Animator:
   m_GameObject: {fileID: 8358408286724642976}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: -176413963506517437, guid: 581acc2cd37019d4ebe1632c7829a0cf, type: 3}
+  m_Controller: {fileID: 9100000, guid: 99646edc3cb252b4e88336b9dfc226fd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -151,7 +151,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.72, y: 2.2}
+    oldSize: {x: 1.7399999, y: 2.1310399}
     newSize: {x: 1.72, y: 2.02}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -201,3 +201,13 @@ MonoBehaviour:
   moveSpeed: 3
   leftBoundary: -6
   rightBoundary: 6
+  move: 3
+  attackdelay: 1
+  down: 20
+  attackdelay2: 0.5
+  attackdelay10: 3
+  attackdelay11: 1
+  upe: 10
+  objAnimator: {fileID: 7922597830444391665}
+  animationdelay: 2
+  enhealth: 15

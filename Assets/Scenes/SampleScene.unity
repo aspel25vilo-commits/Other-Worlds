@@ -1257,7 +1257,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -9152813493808493129, guid: 926866841690acb4e9bdc4107341e67f, type: 3}
+  m_Sprite: {fileID: -6952322452438203180, guid: 926866841690acb4e9bdc4107341e67f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1430,10 +1430,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 721121078587982964, guid: 065cd5c12610475479523feb96341955, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 4873899757810063428, guid: 5199c95fc3401dc4b956a0c5c6c794ec, type: 3}
     - target: {fileID: 4235299046248755335, guid: 065cd5c12610475479523feb96341955, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.95
@@ -1474,49 +1470,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4616721847816270685, guid: 065cd5c12610475479523feb96341955, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.7399999
-      objectReference: {fileID: 0}
-    - target: {fileID: 4616721847816270685, guid: 065cd5c12610475479523feb96341955, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.1310399
-      objectReference: {fileID: 0}
-    - target: {fileID: 5763487991878193715, guid: 065cd5c12610475479523feb96341955, type: 3}
-      propertyPath: upe
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5763487991878193715, guid: 065cd5c12610475479523feb96341955, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5763487991878193715, guid: 065cd5c12610475479523feb96341955, type: 3}
-      propertyPath: attackdelay
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5763487991878193715, guid: 065cd5c12610475479523feb96341955, type: 3}
-      propertyPath: attackdelay2
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5763487991878193715, guid: 065cd5c12610475479523feb96341955, type: 3}
-      propertyPath: attackdelay10
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5763487991878193715, guid: 065cd5c12610475479523feb96341955, type: 3}
-      propertyPath: animationdelay
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7922597830444391665, guid: 065cd5c12610475479523feb96341955, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 99646edc3cb252b4e88336b9dfc226fd, type: 2}
     - target: {fileID: 8358408286724642976, guid: 065cd5c12610475479523feb96341955, type: 3}
       propertyPath: m_Name
       value: boss
-      objectReference: {fileID: 0}
-    - target: {fileID: 8358408286724642976, guid: 065cd5c12610475479523feb96341955, type: 3}
-      propertyPath: m_TagString
-      value: enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
