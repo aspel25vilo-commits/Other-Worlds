@@ -15,34 +15,52 @@ public class spawner : MonoBehaviour
     public GameObject SpritGameOject3;
     public float spawnCooldown3;
     public bool canspawn3 = true;
+    public GameObject enemyGameObjectboss;
+    public GameObject SpritGameOjectboss;
+    public float spawnCooldownboss;
+    public bool canspawnboss = true;
+    public bool theendcoldown = true;
+    public float thndcoldown;
 
     public float minValue;
     public float maxValue;
+    public float minValue2;
+    public float maxValue2;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        StartCoroutine(Theend());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (enemyGameObject != null && canspawn == true)
+        if (enemyGameObject != null && canspawn == true && theendcoldown == true)
         {
             StartCoroutine(EnemySpawner());
             canspawn = false;
         }
-        if (enemyGameObject2 != null && canspawn2 == true)
+        if (enemyGameObject2 != null && canspawn2 == true && theendcoldown == true)
         {
             StartCoroutine(EnemySpawner2());
             canspawn2 = false;
         }
-        if (enemyGameObject3 != null && canspawn3 == true)
+        if (enemyGameObject3 != null && canspawn3 == true && theendcoldown == true)
         {
             StartCoroutine(EnemySpawner3());
             canspawn3 = false;
         }
+         if (enemyGameObjectboss != null && canspawnboss == true && theendcoldown == true)
+        {
+            StartCoroutine(EnemySpawnerboss());
+            canspawnboss = false;
+        }
 
+    }
+    private IEnumerator Theend()
+    {
+        yield return new WaitForSeconds(thndcoldown);
+        theendcoldown = false;
     }
 
     private IEnumerator EnemySpawner()
@@ -92,5 +110,24 @@ public class spawner : MonoBehaviour
             Instantiate(SpritGameOject3, randomLocation, Quaternion.identity);
         }
         canspawn3 = true;
+    }
+
+        private IEnumerator EnemySpawnerboss()
+    {
+        minValue2 = 7;
+        maxValue2 = 6;
+        yield return new WaitForSeconds(spawnCooldownboss);
+        if (minValue2 == 7 && maxValue2 == 6)
+        {
+            Instantiate(enemyGameObjectboss, transform.position, Quaternion.identity);
+            Instantiate(SpritGameOjectboss, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Vector2 randomLocation = new Vector2(Random.Range(minValue, maxValue), transform.position.y);
+            Instantiate(enemyGameObjectboss, randomLocation, Quaternion.identity);
+            Instantiate(SpritGameOjectboss, randomLocation, Quaternion.identity);
+        }
+        canspawnboss = true;
     }
 }

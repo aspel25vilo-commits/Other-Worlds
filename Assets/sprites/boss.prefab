@@ -201,13 +201,10 @@ MonoBehaviour:
   moveSpeed: 3
   leftBoundary: -6
   rightBoundary: 6
-  move: 3
   attackdelay: 1
-  down: 20
   attackdelay2: 0.5
   attackdelay10: 3
-  attackdelay11: 1
-  upe: 10
-  objAnimator: {fileID: 7922597830444391665}
+  attackdelay11: 5
   animationdelay: 2
-  enhealth: 15
+  enhealth: 1
+  objAnimator: {fileID: 7922597830444391665}

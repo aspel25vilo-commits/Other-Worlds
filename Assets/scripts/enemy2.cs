@@ -49,9 +49,9 @@ public class enemy2 : MonoBehaviour
     {
         while (true)
         {
-            //Kolla om han är på marken.
+            //Kolla om han ï¿½r pï¿½ marken.
             //
-            rb.AddForce((move + Vector2.up).normalized * Speed);
+            rb.AddForce((move + Vector2.up * 2).normalized * Speed);
             objAnimator.SetBool("attack", true);
             yield return new WaitForSeconds(animationdelay);
             objAnimator.SetBool("attack", false);
