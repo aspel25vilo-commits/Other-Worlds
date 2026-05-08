@@ -18,6 +18,7 @@ public class spawner : MonoBehaviour
     public GameObject enemyGameObjectboss;
     public GameObject SpritGameOjectboss;
     public float spawnCooldownboss;
+    public float entercooldown;
     public bool canspawnboss = true;
     public bool theendcoldown = true;
     public float thndcoldown;
@@ -119,14 +120,18 @@ public class spawner : MonoBehaviour
         yield return new WaitForSeconds(spawnCooldownboss);
         if (minValue2 == 7 && maxValue2 == 6)
         {
-            Instantiate(enemyGameObjectboss, transform.position, Quaternion.identity);
             Instantiate(SpritGameOjectboss, transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(entercooldown);
+            Instantiate(enemyGameObjectboss, transform.position, Quaternion.identity);
+            
         }
         else
         {
             Vector2 randomLocation = new Vector2(Random.Range(minValue, maxValue), transform.position.y);
-            Instantiate(enemyGameObjectboss, randomLocation, Quaternion.identity);
             Instantiate(SpritGameOjectboss, randomLocation, Quaternion.identity);
+            yield return new WaitForSeconds(entercooldown);
+            Instantiate(enemyGameObjectboss, randomLocation, Quaternion.identity);
+            
         }
         canspawnboss = true;
     }

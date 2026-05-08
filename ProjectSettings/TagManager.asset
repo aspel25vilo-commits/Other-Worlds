@@ -11,6 +11,7 @@ TagManager:
   - life3
   - life2
   - life1
+  - enemylaser
   layers:
   - Default
   - TransparentFX

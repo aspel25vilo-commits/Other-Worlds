@@ -10,20 +10,32 @@ public class boss : MonoBehaviour
     public float attackdelay2 = 1f;
     public float attackdelay10 = 1f;
     public float attackdelay11 = 1f;
+    public float attackdelay15 = 1f;
     public float animationdelay = 1f;
     public float enhealth = 15;
     public Animator objAnimator;
     public GameObject txtobj;
+    public GameObject llaser;
+    
 
     private int moveDirection = 1;
     private bool isMoving = false;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rb;
 
-    private const float AttackInterval = 3f;
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSousce;
+    [SerializeField] private AudioClip baby;
+   
+
+
+
+   private const float AttackInterval = 3f;
 
     void Start()
     {
+        llaser = GameObject.FindGameObjectWithTag("enemylaser");
+        llaser.SetActive(false);
         txtobj = GameObject.Find("pointcounter");
         spriteRenderer = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
@@ -53,7 +65,9 @@ public class boss : MonoBehaviour
     /// <summary>Plays the enter animation then starts normal boss behaviour.</summary>
     private IEnumerator Enter()
     {
+        llaser.SetActive(false);
         isMoving = false;
+        audioSousce.PlayOneShot(baby);
         yield return new WaitForSeconds(animationdelay);
         objAnimator.SetBool("enter", false);
         isMoving = true;
@@ -100,12 +114,15 @@ public class boss : MonoBehaviour
     /// <summary>Boss plays attack animation.</summary>
     private IEnumerator Attackcoldown2()
     {
-        
+
         
         isMoving = false;
         objAnimator.SetBool("attack", true);
+        yield return new WaitForSeconds(attackdelay15);
+        llaser.SetActive(true);
         yield return new WaitForSeconds(attackdelay10);
         objAnimator.SetBool("attack", false);
+        llaser.SetActive(false);
         isMoving = true;
     }
 
@@ -118,7 +135,10 @@ public class boss : MonoBehaviour
     {
         Debug.Log("s");
         if (other.gameObject.tag == "sword")
+        {
             Debug.Log("sfa");
             Entakedamage();
+        }
+            
     }
 }

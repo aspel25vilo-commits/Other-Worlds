@@ -36,13 +36,13 @@ public class player : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(Vector3.left.normalized * playerspeed);
+            transform.Translate(Vector3.left * playerspeed * Time.deltaTime);
             //rigiy.AddForce(playerspeed * Vector2.left.normalized);
 
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector3.right.normalized * playerspeed);
+            transform.Translate(Vector3.right * playerspeed * Time.deltaTime);
             //rigiy.AddForce(playerspeed * Vector2.right.normalized);
         }
         if (Input.GetKeyDown(KeyCode.W))

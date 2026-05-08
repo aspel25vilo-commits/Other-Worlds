@@ -730,19 +730,20 @@ MonoBehaviour:
   enemyGameObject: {fileID: 6873499982761812460, guid: 123d4d4c59bb39f43998fd1de9c4cb04, type: 3}
   SpritGameOject: {fileID: 715436541091570082, guid: 61d04193013859f47aa11442fe841aa5, type: 3}
   spawnCooldown: 3
-  canspawn: 0
+  canspawn: 1
   enemyGameObject2: {fileID: 7772042637747995937, guid: 0623cf30352506f4d9a90aebc71ffa76, type: 3}
   SpritGameOject2: {fileID: 715436541091570082, guid: 61d04193013859f47aa11442fe841aa5, type: 3}
   spawnCooldown2: 5
-  canspawn2: 0
+  canspawn2: 1
   enemyGameObject3: {fileID: 7454089969051367500, guid: 6ab76c861daacd74285bd3fd3f6b738e, type: 3}
   SpritGameOject3: {fileID: 715436541091570082, guid: 61d04193013859f47aa11442fe841aa5, type: 3}
   spawnCooldown3: 7
-  canspawn3: 0
+  canspawn3: 1
   enemyGameObjectboss: {fileID: 8358408286724642976, guid: 065cd5c12610475479523feb96341955, type: 3}
-  SpritGameOjectboss: {fileID: 715436541091570082, guid: 61d04193013859f47aa11442fe841aa5, type: 3}
-  spawnCooldownboss: 1
-  canspawnboss: 0
+  SpritGameOjectboss: {fileID: 5213207245671264434, guid: a9dde340c01b92f4b8f3d56db287d3ea, type: 3}
+  spawnCooldownboss: 10
+  entercooldown: 1
+  canspawnboss: 1
   theendcoldown: 1
   thndcoldown: 300
   minValue: -9
@@ -1198,67 +1199,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: -8435245712485981826, guid: e09a129b082b9a14c9d6968c0c994a1b, type: 3}
---- !u!1001 &1445921426
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4235299046248755335, guid: 065cd5c12610475479523feb96341955, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235299046248755335, guid: 065cd5c12610475479523feb96341955, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.47
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235299046248755335, guid: 065cd5c12610475479523feb96341955, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235299046248755335, guid: 065cd5c12610475479523feb96341955, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235299046248755335, guid: 065cd5c12610475479523feb96341955, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235299046248755335, guid: 065cd5c12610475479523feb96341955, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235299046248755335, guid: 065cd5c12610475479523feb96341955, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235299046248755335, guid: 065cd5c12610475479523feb96341955, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235299046248755335, guid: 065cd5c12610475479523feb96341955, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235299046248755335, guid: 065cd5c12610475479523feb96341955, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5763487991878193715, guid: 065cd5c12610475479523feb96341955, type: 3}
-      propertyPath: enhealth
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8358408286724642976, guid: 065cd5c12610475479523feb96341955, type: 3}
-      propertyPath: m_Name
-      value: boss
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 065cd5c12610475479523feb96341955, type: 3}
 --- !u!1 &1760021248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,7 +1305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd88378dda9f7644a45a398f59726b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerspeed: 0.03
+  playerspeed: 5
   jumpspeed: 0.001
   canjump: 1
   objAnimator: {fileID: 0}
@@ -1976,4 +1916,3 @@ SceneRoots:
   - {fileID: 2014485851}
   - {fileID: 1244875641}
   - {fileID: 1272200781}
-  - {fileID: 1445921426}
