@@ -95,10 +95,7 @@ public class player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "enemy")
-        {
-            Debug.Log("Denna kolliderar jag med: " + other.gameObject.name);
-        }
+        
 
         if (other.tag == "enemy")
         {

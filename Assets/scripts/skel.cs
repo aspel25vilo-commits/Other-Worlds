@@ -11,6 +11,10 @@ public class skelk : MonoBehaviour
     public GameObject player;
     damgepro immunityHandler;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSousce;
+    [SerializeField] private AudioClip death;
+
     void Start()
     {
         objAnimator = GetComponent<Animator>();
@@ -40,6 +44,7 @@ public class skelk : MonoBehaviour
         if (enhealth < 1)
         {
             txtobj.GetComponent<points>().addpoints(1);
+            audioSousce.PlayOneShot(death);
             Destroy(this.gameObject);
         }
         transform.Translate(Vector3.right * move * Time.deltaTime);

@@ -12,9 +12,14 @@ public class enemy2 : MonoBehaviour
     public Animator objAnimator;
     public float attackdelay;
     public float animationdelay;
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip death;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         txtobj = GameObject.Find("pointcounter");
         rb = GetComponent<Rigidbody2D>();
         objAnimator = GetComponent<Animator>();
@@ -41,6 +46,13 @@ public class enemy2 : MonoBehaviour
         if (en2health < 1)
         {
             txtobj.GetComponent<points>().addpoints(1);
+            if (!audioSource.isPlaying)
+            {
+                audioSource.clip = death;
+                audioSource.Play();
+
+            }
+            // audioSource.PlayOneShot(death);
             Destroy(this.gameObject);
         }
     }
