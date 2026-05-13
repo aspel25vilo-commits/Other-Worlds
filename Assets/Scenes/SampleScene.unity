@@ -288,7 +288,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -400, y: 280}
+  m_AnchoredPosition: {x: -372, y: 280}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &163517593
@@ -737,11 +737,11 @@ MonoBehaviour:
   canspawn2: 1
   enemyGameObject3: {fileID: 7454089969051367500, guid: 6ab76c861daacd74285bd3fd3f6b738e, type: 3}
   SpritGameOject3: {fileID: 715436541091570082, guid: 61d04193013859f47aa11442fe841aa5, type: 3}
-  spawnCooldown3: 7
+  spawnCooldown3: 8
   canspawn3: 1
   enemyGameObjectboss: {fileID: 8358408286724642976, guid: 065cd5c12610475479523feb96341955, type: 3}
   SpritGameOjectboss: {fileID: 5213207245671264434, guid: a9dde340c01b92f4b8f3d56db287d3ea, type: 3}
-  spawnCooldownboss: 10
+  spawnCooldownboss: 300
   entercooldown: 1
   canspawnboss: 1
   theendcoldown: 1
@@ -1310,7 +1310,7 @@ MonoBehaviour:
   canjump: 1
   objAnimator: {fileID: 0}
   fhillip: {fileID: 0}
-  health: 3
+  health: 100
 --- !u!50 &1760021253
 Rigidbody2D:
   serializedVersion: 5

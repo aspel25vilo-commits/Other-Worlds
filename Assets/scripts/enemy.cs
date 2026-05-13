@@ -15,6 +15,11 @@ public class enemy : MonoBehaviour
     public SpriteRenderer fhillip;
     public float enhealth = 1;
     public GameObject txtobj;
+
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSousce;
+    [SerializeField] private AudioClip death;
     void Start()
     {
         objAnimator = GetComponent<Animator>();
@@ -47,6 +52,7 @@ public class enemy : MonoBehaviour
         if (enhealth < 1)
         {
             txtobj.GetComponent<points>().addpoints(1);
+            audioSousce.PlayOneShot(death);
             Destroy(this.gameObject);
         }
         
